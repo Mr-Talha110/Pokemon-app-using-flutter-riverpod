@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:riverpod_app/home.dart';
 import 'package:riverpod_app/services/dio_service.dart';
+import 'package:riverpod_app/services/local_database.dart';
 
 final getit = GetIt.instance;
 void main() async {
@@ -13,6 +14,7 @@ void main() async {
 
 Future<void> _setupDependencies() async {
   GetIt.instance.registerSingleton<DioService>(DioService());
+  GetIt.instance.registerSingleton<LocalDatabase>(LocalDatabase());
 }
 
 class MyApp extends StatelessWidget {
